@@ -1,0 +1,3 @@
+{% import_yaml 'spark/defaults.yaml' as defaults %}
+
+{% set spark = salt['pillar.get']( 'spark', default=defaults.spark, merge=True) %}

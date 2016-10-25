@@ -1,0 +1,11 @@
+##### File managed by Saltstack #####
+SPARK_PID_DIR=/var/run
+
+# Options to append to start-master.sh script
+ARGS="{{master_args}}"
+
+## Possible options
+# -h HOST, --host HOST	Hostname to listen on
+# -p PORT, --port PORT	Port for service to listen on (default: 7077 for master)
+# --webui-port PORT	Port for web UI (default: 8080 for master)
+# --properties-file FILE	Path to a custom Spark properties file to load (default: conf/spark-defaults.conf)

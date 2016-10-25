@@ -1,0 +1,9 @@
+name: spark
+os: Ubuntu
+os_family: Debian
+version: 201610
+release: 1
+summary: Spark Saltstack formula
+description: Spark Saltstack formula
+top_level_dir: spark
+recommended: 

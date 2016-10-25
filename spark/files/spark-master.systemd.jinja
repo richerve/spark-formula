@@ -1,0 +1,15 @@
+[Unit]
+Description=Spark Master
+Wants=basic.target
+After=network.target
+
+[Service]
+Type=forking
+EnvironmentFile=/etc/default/spark_master
+PidFile=/var/run/spark-root-org.apache.spark.deploy.master.Master-1.pid
+ExecStart={{version_path}}/sbin/start-master.sh $ARGS
+ExecStop={{version_path}}/sbin/stop-master.sh
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target

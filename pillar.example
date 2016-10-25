@@ -1,0 +1,12 @@
+spark:
+  version: 2.0.1-bin-hadoop2.7
+  source: http://ftp.heanet.ie/mirrors/www.apache.org/dist/spark/spark-2.0.1/spark-2.0.1-bin-hadoop2.7.tgz
+  source_hash: "md5=43aa7c28b9670e65cb4f395000838860"
+  install_dir: /opt
+  worker:
+    args: "-h 1.2.3.4"
+  env:
+    SPARK_MASTER_HOST: localhost
+  master:
+    args: "-h 5.6.7.8"
+    uri: "spark://5.6.7.8:7077"

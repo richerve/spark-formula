@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# This file is sourced when running various Spark programs.
+# You can see all the options on the template file spark-env.sh.template.
+
+{%- for var, value in spark_env.iteritems() %}
+{{var}}="{{value}}"
+{%- endfor %}
