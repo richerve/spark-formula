@@ -5,6 +5,8 @@ spark_tarball:
     - name: {{ spark.install_dir }}
     - source: {{ spark.source }}
     - source_hash: {{ spark.source_hash }}
+    - user: {{ spark.user }}
+    - group: {{ spark.group }}
     - archive_format: tar
     - if_missing: {{ spark.version_path }}
 
@@ -35,6 +37,8 @@ spark_env:
     - name: /etc/spark/spark-env.sh
     - source: salt://spark/files/spark-env.jinja
     - template: jinja
+    - user: {{ spark.user }}
+    - group: {{ spark.group }}
     - defaults:
         spark_env: {{spark.env}}
     - require:

@@ -3,6 +3,8 @@ spark:
   source: http://ftp.heanet.ie/mirrors/www.apache.org/dist/spark/spark-2.1.0/spark-2.1.0-bin-hadoop2.7.tgz
   source_hash: "md5=50e73f255f9bde50789ad5bd657c7a71"
   install_dir: /opt
+  user: spark
+  group: spark
   worker:
     args: "-h localhost"
     master_uri: "spark://localhost:7077"
