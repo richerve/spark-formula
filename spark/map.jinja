@@ -1,5 +1,5 @@
 {% import_yaml 'spark/defaults.yaml' as defaults %}
 
-{% do defaults.spark.update({'version_path': defaults.spark.install_dir ~ "/spark" ~ defaults.spark.version}) %}
+{% do defaults.spark.update({'version_path': defaults.spark.install_dir ~ "/spark-" ~ defaults.spark.version}) %}
 
 {% set spark = salt['pillar.get']( 'spark', default=defaults.spark, merge=True) %}
