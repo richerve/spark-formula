@@ -4,13 +4,13 @@ spark_user:
   user.present:
     - name: {{ spark.user }}
     - home: {{ spark.version_path }}
-    - system
+    - system: True
 
 spark_group:
   group.present:
     - name: {{ spark.group }}
     - home: {{ spark.version_path }}
-    - system
+    - system: True
 
 spark_tarball:
   archive.extracted:
