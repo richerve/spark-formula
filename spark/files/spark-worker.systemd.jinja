@@ -6,7 +6,7 @@ After=network.target
 [Service]
 Type=forking
 EnvironmentFile=/etc/default/spark_worker
-PidFile=/var/run/spark-root-org.apache.spark.deploy.worker.Worker-1.pid
+PIDFile=/var/run/spark-root-org.apache.spark.deploy.worker.Worker-1.pid
 ExecStart={{version_path}}/sbin/start-slave.sh $ARGS
 ExecStop={{version_path}}/sbin/stop-slave.sh
 SuccessExitStatus=143
