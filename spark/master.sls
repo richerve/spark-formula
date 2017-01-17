@@ -19,6 +19,8 @@ spark_master_service_unit:
 {%- endif %}
     - template: jinja
     - defaults:
+        user: {{ spark.user }}
+        group: {{ spark.group }}
         version_path: {{ spark.version_path }}
     - watch:
       - file: spark_master_defaults

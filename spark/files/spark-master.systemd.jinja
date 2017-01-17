@@ -4,6 +4,8 @@ Wants=basic.target
 After=network.target
 
 [Service]
+User={{user}}
+Group={{group}}
 Type=forking
 EnvironmentFile=/etc/default/spark_master
 PIDFile=/var/run/spark--org.apache.spark.deploy.master.Master-1.pid
