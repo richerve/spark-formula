@@ -1,5 +1,4 @@
 {% from "spark/map.jinja" import spark with context %}
-{%- set version_path = spark.install_dir ~ "/spark-" ~ spark.version %}
 
 spark_tarball:
   archive.extracted:
@@ -7,26 +6,26 @@ spark_tarball:
     - source: {{ spark.source }}
     - source_hash: {{ spark.source_hash }}
     - archive_format: tar
-    - if_missing: {{ version_path }}
+    - if_missing: {{ spark.version_path }}
 
 spark-symlink:
   file.symlink:
     - name: {{spark.install_dir}}/spark
-    - target: {{ version_path }}
+    - target: {{ spark.version_path }}
     - require:
       - archive: spark_tarball
 
 spark-submit_bin_link:
   file.symlink:
     - name: /usr/bin/spark-submit
-    - target: {{ version_path }}/bin/spark-submit
+    - target: {{ spark.version_path }}/bin/spark-submit
     - require:
       - archive: spark_tarball
 
 spark_conf_link:
   file.symlink:
     - name: /etc/spark
-    - target: {{ version_path }}/conf
+    - target: {{ spark.version_path }}/conf
     - require:
       - archive: spark_tarball
 
@@ -46,7 +45,7 @@ spark_profile:
   file.managed:
     - name: /etc/profile.d/spark.sh
     - contents:
-      - SPARK_HOME={{ version_path }}
+      - SPARK_HOME={{ spark.version_path }}
       - export SPARK_HOME
     - require:
       - file: spark-submit_bin_link

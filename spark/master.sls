@@ -1,5 +1,4 @@
 {% from "spark/map.jinja" import spark with context %}
-{%- set version_path = spark.install_dir ~ "/spark-" ~ spark.version %}
 
 include:
   - spark
@@ -20,7 +19,7 @@ spark_master_service_unit:
 {%- endif %}
     - template: jinja
     - defaults:
-        version_path: {{ version_path }}
+        version_path: {{ spark.version_path }}
     - watch:
       - file: spark_master_defaults
 
