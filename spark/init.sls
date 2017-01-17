@@ -9,7 +9,6 @@ spark_user:
 spark_group:
   group.present:
     - name: {{ spark.group }}
-    - home: {{ spark.version_path }}
     - system: True
 
 spark_tarball:
