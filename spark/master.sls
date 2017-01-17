@@ -29,7 +29,6 @@ spark_master_service:
   service.running:
     - name: spark-master
     - enable: True
-    - require:
-      - file: spark_master_service_unit
     - watch:
+      - file: spark_master_service_unit
       - file: spark_master_defaults

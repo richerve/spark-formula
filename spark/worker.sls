@@ -30,7 +30,6 @@ spark_worker_service:
   service.running:
     - name: spark-worker
     - enable: True
-    - require:
-      - file: spark_worker_service_unit
     - watch:
+      - file: spark_worker_service_unit
       - file: spark_worker_defaults
