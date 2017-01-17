@@ -46,6 +46,7 @@ spark_profile:
   file.managed:
     - name: /etc/profile.d/spark.sh
     - contents:
-      - export SPARK_HOME={{ version_path }}
+      - SPARK_HOME={{ version_path }}
+      - export SPARK_HOME
     - require:
       - file: spark-submit_bin_link
