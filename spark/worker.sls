@@ -9,7 +9,11 @@ spark_worker_defaults:
     - source: salt://spark/files/spark-worker.default.jinja
     - template: jinja
     - defaults:
-        worker_args: {{ spark.worker.get("args", "-h " ~ salt.grains.get("host", "localhost")) }}
+        {% if spark.worker.args is defined %}
+        worker_args: {{ spark.worker.args }}
+        {% else %}
+        worker_args: {{ "-h " ~ salt.grains.get("host", "localhost") }}
+        {% endif %}
         master_uri: {{ spark.worker.master_uri }}
 
 spark_worker_service_unit:
