@@ -9,7 +9,7 @@ spark_master_defaults:
     - source: salt://spark/files/spark-master.default.jinja
     - template: jinja
     - defaults:
-        master_args: {{ spark.master.args }}
+        master_args: {{ spark.master.get("args", "-h " ~ salt.grains.get("host", "localhost")) }}
 
 spark_master_service_unit:
   file.managed:

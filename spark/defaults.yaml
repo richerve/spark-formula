@@ -6,7 +6,4 @@ spark:
   user: spark
   group: spark
   worker:
-    args: "-h localhost"
     master_uri: "spark://localhost:7077"
-  master:
-    args: "-h localhost"
