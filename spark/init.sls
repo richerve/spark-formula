@@ -9,7 +9,7 @@ spark_user:
 spark_group:
   group.present:
     - name: {{ spark.group }}
-    {% if addusers in spark %}
+    {% if spark.addusers is defined %}
     - addusers:
       {% for user in spark.addusers %}
       - {{ user }}
