@@ -3,8 +3,8 @@
 spark_user:
   user.present:
     - name: {{ spark.user }}
-    - home: {{ spark.version_path }}
     - system: True
+    - shell: /bin/bash
 
 spark_group:
   group.present:
