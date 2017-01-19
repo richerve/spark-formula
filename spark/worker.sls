@@ -5,7 +5,7 @@ include:
 
 spark_worker_defaults:
   file.managed:
-    - name: /etc/default/spark_worker
+    - name: /etc/default/spark-worker
     - source: salt://spark/files/spark-worker.default.jinja
     - template: jinja
     - defaults:

@@ -5,7 +5,7 @@ include:
 
 spark_master_defaults:
   file.managed:
-    - name: /etc/default/spark_master
+    - name: /etc/default/spark-master
     - source: salt://spark/files/spark-master.default.jinja
     - template: jinja
     - defaults:
