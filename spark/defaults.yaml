@@ -5,5 +5,8 @@ spark:
   install_dir: /opt
   user: spark
   group: spark
+  master:
+    args: "-h localhost"
   worker:
+    args: "-h localhost"
     master_uri: "spark://localhost:7077"

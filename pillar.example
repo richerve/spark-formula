@@ -10,8 +10,8 @@ spark:
     - user2
   env:
     SPARK_MASTER_HOST: localhost
-  worker:
-    args: "-h 1.2.3.4"
-    master_uri: "spark://5.6.7.8:7077"
   master:
-    args: "-h 5.6.7.8"
+    args: "-h localhost"
+  worker:
+    args: "-h localhost"
+    master_uri: "spark://localhost:7077"
